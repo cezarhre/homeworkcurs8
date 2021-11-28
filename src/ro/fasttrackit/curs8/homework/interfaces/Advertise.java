@@ -1,7 +1,7 @@
 package ro.fasttrackit.curs8.homework.interfaces;
 
 public class Advertise {
-    private AdvertiseSender advertiseSender;
+    private final AdvertiseSender advertiseSender;
 
     public Advertise(AdvertiseSender advertiseSender){
         this.advertiseSender = advertiseSender;

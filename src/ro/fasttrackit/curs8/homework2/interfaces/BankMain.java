@@ -2,17 +2,20 @@ package ro.fasttrackit.curs8.homework2.interfaces;
 
 public class BankMain {
     public static void main(String[] args) {
-        BankServices BTBank = new BTBank(1000000,10000);
-        BankServices BRDBank = new BRDBank(10000,1000);
-        BankServices INGBank = new INGBank(100000,100000);
+        BankServices btBank = new BTBank(100000);
+        BankServices brdBank = new BRDBank(10000);
+        BankServices ingBank = new INGBank(100000);
 
-        System.out.println(BRDBank.creditOffer());
-        System.out.println(INGBank.creditOffer());
-        System.out.println(BTBank.creditOffer());
+        Person person = new Person(ingBank);
+        person.personRequest();
+        Person person1 = new Person(brdBank);
+        person1.personRequest();
+        Person person2 = new Person(btBank);
+        person2.personRequest();
 
-        System.out.println("Credit sold BRD "+BRDBank.withdrawService());
-        System.out.println("Credit sold BT "+BTBank.withdrawService());
-        System.out.println("Credit sold ING "+INGBank.withdrawService());
+        System.out.println("Credit sold BRD "+brdBank.withdrawService(1000));
+        System.out.println("Credit sold BT "+btBank.withdrawService(1500));
+        System.out.println("Credit sold ING "+ingBank.withdrawService(2000));
 
     }
 }
